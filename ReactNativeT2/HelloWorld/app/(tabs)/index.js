@@ -16,15 +16,17 @@ export default function HomeScreen() {
           source={require('@/assets/images/partial-react-logo.png')}
           style={styles.reactLogo}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Welcome Brother!</ThemedText>
         <HelloWave />
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">Step 1: Try it now</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.js</ThemedText> to see changes.
           Press{' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
@@ -36,6 +38,7 @@ export default function HomeScreen() {
           to open developer tools.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <Link href="/modal">
           <Link.Trigger>
@@ -64,6 +67,7 @@ export default function HomeScreen() {
           {`Tap the Explore tab to learn more about what's included in this starter app.`}
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
