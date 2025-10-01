@@ -1,47 +1,34 @@
-// import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-// import { Stack } from 'expo-router';
-// import { StatusBar } from 'expo-status-bar';
-// import 'react-native-reanimated';
-
-// import { useColorScheme } from '@/hooks/use-color-scheme';
-
-import { View, Text, Image, ImageBackground } from 'react-native';
-const logoImage = require("../assets/images/icon.png");
+import { View, Text, StyleSheet } from 'react-native';
+import BasicComponent from '../components/ui/basicComponents';
 
 export default function RootLayout() {
-
-  return <View style={{ flex: 1, backgroundColor: "plum", padding: 50 }}>
-    <View style={{ height: 50, width: 300, backgroundColor: "purple" }}>
-      <Text style={{ color: "white" }}>Hello World </Text>
+  return (
+    <View>
+      <BasicComponent>
+      </BasicComponent>
     </View>
-    <View style={{ height: 50, width: 300, backgroundColor: "red" }}>
-      {/* <Image
-        source={{ uri: "https://picsum.photos/300" }}
-        style={{ width: 150, height: 150 }} /> */}
-      <ImageBackground
-        source={{ uri: "https://picsum.photos/300" }}
-        style={{ width: 150, height: 150 }}>
-        <Image source={logoImage} style={{ width: 50, height: 50 }} />
-      </ImageBackground>
-
-    </View>
-  </View>
+  )
 }
 
-// export const unstable_settings = {
-//   anchor: '(tabs)',
-// };
+export const styles = StyleSheet.create({
+  container: { flex: 1, padding: 30, backgroundColor: "red" },
+  title: { fontSize: 30, color: "white" },
+  desc: { fontSize: 20, color: "white" },
+  box: {
+    width: 150,
+    height: 150,
+    padding: 5,
+    borderWidth: 2,
+    borderColor:"black",
+    margin:10,
+    borderRadius: 10
+  },
+  greenBox: {
+    backgroundColor: "green"
+  },
+  redBox: {
+    backgroundColor: "red"
+  }
+})
 
-
-// const colorScheme = useColorScheme();
-
-// return (
-//   <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-//     <Stack>
-//       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-//       <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-//     </Stack>
-//     <StatusBar style="auto" />
-//   </ThemeProvider>
-// );
 
