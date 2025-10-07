@@ -22,13 +22,13 @@ const Box = ({ children,style}) => {
 const styles = StyleSheet.create({
   box: {
     width:150,
-    height: 50,
+    height: 150,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
     flexShrink:1,
     margin:10,
-    flexGrow:1
+    // flexGrow:1
   },
   text: {
     color: "white",

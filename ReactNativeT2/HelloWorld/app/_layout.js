@@ -1,16 +1,21 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import BasicComponent from '../components/ui/basicComponents';
 import Box from '../components/ui/box';
+import WindowSizeComponent from '../components/ui/window_dimensions';
+import { StatusBar } from 'expo-status-bar';
 
 export default function RootLayout() {
   return (
-    <View style={styles.container}>
-      <Box>Box 1</Box>
-      <Box style={{position:"relative",top :75,left:25}}>Box 2</Box>
-      <Box>Box 3</Box>
-      <Box style={{position:"absolute",top :75,left:25}}>Box 4</Box>
-      <Box>Box 5</Box>
-    </View>
+    <SafeAreaView style={styles.container}>
+       <StatusBar
+        backgroundColor="plum"     // matches container background
+        barStyle="dark-content"    // use "light-content" for dark bg
+        translucent={false}/>
+      <WindowSizeComponent>
+
+      </WindowSizeComponent>
+    </SafeAreaView>
   );
 }
 
@@ -18,11 +23,11 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width:300,
     padding: 30,
     backgroundColor: "black",
-    flexDirection: "column",
-    alignItems:"flex-start",
+    flexDirection: "column", // vertical layout
+    alignItems: "center",     // horizontal center
+    justifyContent: "center", // vertical center
     columnGap:10
 
   },

@@ -4,7 +4,7 @@ import { styles } from '../../app/_layout'
 export default function Greet({ name }) {
     return (
     <View>
-        <Text style={styles.desc}>{name}</Text>
+        <Text>{name}</Text>
     </View>
     )
 }
