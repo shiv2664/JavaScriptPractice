@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, useWindowDimensions, Platform } from "react-native";
-// import CustomButton from "../../customButtonComponents/customButton.android";
+import CustomButton from '../customButtonComponents/CustomButton';
 
 
 export default function WindowSizeComponent() {
@@ -8,23 +8,23 @@ export default function WindowSizeComponent() {
 
     return (
 
-        // <View>
-        //     <CustomButton title="Pressed" onPress={() => console.log("Pressed")}>
+        <View>
+            <CustomButton title="Pressed" onPress={() => console.log("Pressed")}>
 
-        //     </CustomButton>
-        // </View>
-        <View
-            style={[
-                styles.box,
-                {
-                    width: width > 700 ? "50%" : "90%",
-                    height: height > 1000 ? "50%" : "90%",
-                },
-            ]}>
-            <Text style={styles.text}>
-                Width: {Math.round(width)} | Height: {Math.round(height)}
-            </Text>
+            </CustomButton>
         </View>
+        // <View
+        //     style={[
+        //         styles.box,
+        //         {
+        //             width: width > 700 ? "50%" : "90%",
+        //             height: height > 1000 ? "50%" : "90%",
+        //         },
+        //     ]}>
+        //     <Text style={styles.text}>
+        //         Width: {Math.round(width)} | Height: {Math.round(height)}
+        //     </Text>
+        // </View>
     );
 }
 
