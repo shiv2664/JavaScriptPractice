@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, useWindowDimensions, Platform } from "react-native";
-import CustomButton from '../customButtonComponents/CustomButton';
+import CustomButton from '../CustomButton/CustomButton';
+
 
 
 export default function WindowSizeComponent() {
