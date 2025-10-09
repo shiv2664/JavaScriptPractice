@@ -1,34 +1,45 @@
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, ScrollView,Platform,FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BasicComponent from '../components/ui/basicComponents';
 import Box from '../components/ui/box';
 import WindowSizeComponent from '../components/ui/window_dimensions';
 import { StatusBar } from 'expo-status-bar';
+import PokemonCardParent from '../components/PokemonCard/PokemonCardParent';
+import  ListingExample from '../components/ListComponent/ListingExample';
+import pokemonList from '../assets/data.json'
 
 export default function RootLayout() {
   return (
     <SafeAreaView style={styles.container}>
-       <StatusBar
+      <StatusBar
         backgroundColor="plum"     // matches container background
         barStyle="dark-content"    // use "light-content" for dark bg
-        translucent={false}/>
-      <WindowSizeComponent>
+        translucent={false} />
+         <FlatList
+            data={pokemonList}
+            renderItem={({ item }) => {
+                return (
+                    <View style={styles.card}>
+                        <Text>{item.id}</Text>
+                        <Text>{item.name}</Text>
+                        <Text>{item.type}</Text>
+                    </View>
+                );
+            }}></FlatList>
 
-      </WindowSizeComponent>
     </SafeAreaView>
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30,
-    backgroundColor: "black",
+    padding: 10,
+    backgroundColor: "plum",
     flexDirection: "column", // vertical layout
-    alignItems: "center",     // horizontal center
+    alignItems: "left",     // horizontal center
     justifyContent: "center", // vertical center
-    columnGap:10
+    columnGap: 10
 
   },
   title: { fontSize: 30, color: "white" },
@@ -38,7 +49,7 @@ const styles = StyleSheet.create({
     height: 150,
     padding: 5,
     borderWidth: 2,
-    borderColor: "black",
+    borderColor: "plum",
     margin: 10,
     borderRadius: 10
   },
@@ -47,7 +58,36 @@ const styles = StyleSheet.create({
   },
   redBox: {
     backgroundColor: "red"
-  }
+  },
+  card: {
+        backgroundColor: "white",
+        borderRadius: 16,
+        borderWidth: 2,
+        padding: 16,
+        margin: 16,
+        width: "90%",
+        ...Platform.select({
+            ios: {
+                shadowOffset: { width: 2, height: 2 },
+                shadowColor: "#333",
+                shadowOpacity: 0.3,
+                shadowRadius: 4,
+            },
+            android: {
+                elevation: 5,
+            },
+        }),
+    }
 })
 
 
+
+// <SafeAreaView style={styles.container}>
+//    <StatusBar
+//     backgroundColor="plum"     // matches container background
+//     barStyle="dark-content"    // use "light-content" for dark bg
+//     translucent={false}/>
+//   <WindowSizeComponent>
+
+//   </WindowSizeComponent>
+// </SafeAreaView>
