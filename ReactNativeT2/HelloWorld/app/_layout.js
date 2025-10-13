@@ -8,6 +8,7 @@ import PokemonCardParent from '../components/PokemonCard/PokemonCardParent';
 import ListingExample from '../components/ListComponent/ListingExample';
 import pokemonList from '../assets/data.json'
 import LoginForm from '../components/LoginForm/LoginForm';
+import RNNetworking from '../components/RNNetworking/RNNetworking';
 
 export default function RootLayout() {
   return (
@@ -16,9 +17,9 @@ export default function RootLayout() {
         backgroundColor="plum"     // matches container background
         barStyle="dark-content"    // use "light-content" for dark bg
         translucent={false} />
-        <LoginForm>
-
-        </LoginForm>
+        <RNNetworking>
+          
+        </RNNetworking>
 
     </SafeAreaView>
   );

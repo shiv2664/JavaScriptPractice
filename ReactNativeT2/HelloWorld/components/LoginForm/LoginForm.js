@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 20,
     backgroundColor: "#f5f5f5",
-    elevation:2
+    elevation:2,
+    borderRadius:10
   },
   form: {
     backgroundColor: "#ffffff",
