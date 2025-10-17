@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "RNNavigation",
-    "slug": "RNNavigation",
+    "name": "ExpoRouter",
+    "slug": "ExpoRouter",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "rnnavigation",
+    "scheme": "exporouter",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
